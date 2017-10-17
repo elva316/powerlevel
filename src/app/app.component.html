@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <title></title>
+  </head>
+  <body>
+      <div class='container' id='con'>
+          <div id="top">
+                <h4>PowerComponent</h4>
+                <h1 class='head'>Inital Power Level: </h1>
+                <form class='head' #regForm='ngForm' (submit)="onSubmit(regForm)">
+
+                  <input type="number" min=1 max=100 name="num" value='x' [(ngModel)]="updating.num">
+                  <button type="submit">Calculate Powers</button>
+                </form>
+                <!-- <img src="fullImagePath" > -->
+                <img id="img" src="../assets/img.jpg" alt="">
+              </div>
+              <div>
+
+                <div class="block1">
+                  <app-human [original]='powerlevel'></app-human>
+                </div>
+                <div class="block1">
+                  <app-saiyan [original]='powerlevel * 10'></app-saiyan>
+                </div>
+                <div class="block1">
+                  <app-super-saiyan [original]='powerlevel * 90'></app-super-saiyan>
+                </div>
+              </div>
+              <div>
+
+                <div class="block2">
+                  <app-super-saiyan-two [original]='powerlevel * 150'></app-super-saiyan-two>
+                </div>
+                <div class="block2">
+                  <app-super-saiyan-three [original]='powerlevel * 250'  ></app-super-saiyan-three>
+                </div>
+                <div class="block2" id='fixed'>
+                  <app-super-saiyan-four [original]='powerlevel * 500'></app-super-saiyan-four>
+                </div>
+              </div>
+
+
+      </div>
+  </body>
+</html>
